@@ -1,0 +1,29 @@
+B) SQL Improvement Logic Test
+
+Suggestion sql improvements:
+
+1. Create indexes for on each field of SEARCH, WHERE filter and ON conditions to find data easily and retrieve data faster.
+
+2. Use wildcard at the end of the search string (String%), it will uses the index and search directly to the records that start with 'String' and ignore others while 
+use wildcard at the beginning of the search string (%String), it will look at every row and will make the queries slower.
+
+WHERE ((JobCategories.name LIKE 'キャビンアテンダント%'
+OR JobTypes.name LIKE 'キャビンアテンダント%'
+OR Jobs.name LIKE 'キャビンアテンダント%'
+OR Jobs.description LIKE 'キャビンアテンダント%'
+OR Jobs.detail LIKE 'キャビンアテンダント%'
+OR Jobs.business_skill LIKE 'キャビンアテンダント%'
+OR Jobs.knowledge LIKE 'キャビンアテンダント%'
+OR Jobs.location LIKE 'キャビンアテンダント%'
+OR Jobs.activity LIKE 'キャビンアテンダント%'
+OR Jobs.salary_statistic_group LIKE 'キャビンアテンダント%'
+OR Jobs.salary_range_remarks LIKE 'キャビンアテンダント%'
+OR Jobs.restriction LIKE 'キャビンアテンダント%'
+OR Jobs.remarks LIKE 'キャビンアテンダント%'
+OR Personalities.name LIKE 'キャビンアテンダント%'
+OR PracticalSkills.name LIKE 'キャビンアテンダント%'
+OR BasicAbilities.name LIKE 'キャビンアテンダント%'
+OR Tools.name LIKE 'キャビンアテンダント%'
+OR CareerPaths.name LIKE 'キャビンアテンダント%'
+OR RecQualifications.name LIKE 'キャビンアテンダント%'
+OR ReqQualifications.name LIKE 'キャビンアテンダント%')
